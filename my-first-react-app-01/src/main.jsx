@@ -14,6 +14,7 @@ import SelectComp from './SelectComp'
 import SelectStyle from './SelectStyle'
 import StyledPanel from './StyledPanel'
 import TitledPanel from './TitledPanel'
+import TitledPanel2 from './TitledPanel2'
 
 const root = createRoot(document.getElementById('root'));
 // root.render(
@@ -45,6 +46,10 @@ root.render(
       <p>StyledPanel Test!</p>
     </StyledPanel>
     <TitledPanel title={title} body={body} />
+    <TitledPanel2>
+      <p key="title">This is TitledPanel2 title</p>
+      <p key="body">This is TitledPanel2 body</p>
+    </TitledPanel2>
   </>
 );
 
