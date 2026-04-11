@@ -24,6 +24,10 @@ export default function ForItem({ book }) {
           return <dd>{book.summary}</dd>
         }
       })()}
+      // もしくは?:演算子を使用する
+      {book.download ? <Download /> : null}
+      // もしくは&&を使う
+      {book.download && <Download />}
     </>
   );
 }
