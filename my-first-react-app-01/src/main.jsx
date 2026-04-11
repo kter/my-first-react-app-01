@@ -18,6 +18,7 @@ import TitledPanel2 from './TitledPanel2'
 import ListTemplate from './ListTemplate'
 import ListTemplate2 from './ListTemplate2'
 import StateParent from './StateParent'
+import EventMouse from './EventMouse'
 
 const root = createRoot(document.getElementById('root'));
 // root.render(
@@ -72,6 +73,8 @@ root.render(
       </>
     )} />
     <StateParent />
+    <EventMouse defaultSrc="https://www.web-deli.com/image/linkbanner_l.gif"
+      afterSrc="https://www.web-deli.com/image/home_chara.gif" />
   </>
 );
 
