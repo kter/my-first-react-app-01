@@ -12,6 +12,7 @@ import ForFilter from './ForFilter';
 import ForSort from './ForSort';
 import SelectComp from './SelectComp'
 import SelectStyle from './SelectStyle'
+import StyledPanel from './StyledPanel'
 
 const root = createRoot(document.getElementById('root'));
 // root.render(
@@ -37,6 +38,9 @@ root.render(
     <ForSort src={books} />
     <SelectComp />
     <SelectStyle mode="light" />
+    <StyledPanel>
+      <p>StyledPanel Test!</p>
+    </StyledPanel>
   </>
 );
 
