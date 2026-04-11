@@ -11,6 +11,7 @@ import ForNest from './ForNest';
 import ForFilter from './ForFilter';
 import ForSort from './ForSort';
 import SelectComp from './SelectComp'
+import SelectStyle from './SelectStyle'
 
 const root = createRoot(document.getElementById('root'));
 // root.render(
@@ -35,6 +36,7 @@ root.render(
     <ForFilter src={books} />
     <ForSort src={books} />
     <SelectComp />
+    <SelectStyle mode="light" />
   </>
 );
 
