@@ -15,6 +15,8 @@ import SelectStyle from './SelectStyle'
 import StyledPanel from './StyledPanel'
 import TitledPanel from './TitledPanel'
 import TitledPanel2 from './TitledPanel2'
+import ListTemplate from './ListTemplate'
+import ListTemplate2 from './ListTemplate2'
 
 const root = createRoot(document.getElementById('root'));
 // root.render(
@@ -50,6 +52,24 @@ root.render(
       <p key="title">This is TitledPanel2 title</p>
       <p key="body">This is TitledPanel2 body</p>
     </TitledPanel2>
+    <ListTemplate src={books}>
+      {elem => (
+        <>
+          <dt>
+            {elem.title} ({elem.price}円)
+          </dt>
+          <dd>{elem.summary}</dd>
+        </>
+      )}
+    </ListTemplate>
+    <ListTemplate2 src={books} render={elem => (
+      <>
+        <dt>
+          {elem.title} ({elem.price}円)
+        </dt>
+        <dd>{elem.summary}</dd>
+      </>
+    )} />
   </>
 );
 

@@ -1,3 +1,4 @@
+// childrenから目的の要素を取り出す
 export default function TitledPanel2({ children }) {
   const title = children.find(elem => elem.key === 'title');
   const body = children.find(elem => elem.key === 'body');
