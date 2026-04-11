@@ -7,6 +7,7 @@ import EventBasic from './EventBasic';
 import StateBasic from './StateBasic';
 import books from './books'
 import ForList from './ForList';
+import ForNest from './ForNest';
 
 const root = createRoot(document.getElementById('root'));
 // root.render(
@@ -27,6 +28,7 @@ root.render(
     <EventBasic type="time" />
     <StateBasic init={0} />
     <ForList src={books} />
+    <ForNest src={books} />
   </>
 );
 
