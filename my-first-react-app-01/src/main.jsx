@@ -10,6 +10,7 @@ import ForList from './ForList';
 import ForNest from './ForNest';
 import ForFilter from './ForFilter';
 import ForSort from './ForSort';
+import SelectComp from './SelectComp'
 
 const root = createRoot(document.getElementById('root'));
 // root.render(
@@ -33,6 +34,7 @@ root.render(
     <ForNest src={books} />
     <ForFilter src={books} />
     <ForSort src={books} />
+    <SelectComp />
   </>
 );
 
