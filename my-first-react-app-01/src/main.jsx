@@ -20,6 +20,7 @@ import ListTemplate2 from './ListTemplate2'
 import StateParent from './StateParent'
 import EventMouse from './EventMouse'
 import EventObj from './EventObj'
+import EventKey from './EventKey'
 
 const root = createRoot(document.getElementById('root'));
 // root.render(
@@ -77,6 +78,7 @@ root.render(
     <EventMouse defaultSrc="https://www.web-deli.com/image/linkbanner_l.gif"
       afterSrc="https://www.web-deli.com/image/home_chara.gif" />
     <EventObj />
+    <EventKey />
   </>
 );
 
