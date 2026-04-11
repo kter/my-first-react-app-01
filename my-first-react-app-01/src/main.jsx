@@ -17,6 +17,7 @@ import TitledPanel from './TitledPanel'
 import TitledPanel2 from './TitledPanel2'
 import ListTemplate from './ListTemplate'
 import ListTemplate2 from './ListTemplate2'
+import StateParent from './StateParent'
 
 const root = createRoot(document.getElementById('root'));
 // root.render(
@@ -70,6 +71,7 @@ root.render(
         <dd>{elem.summary}</dd>
       </>
     )} />
+    <StateParent />
   </>
 );
 

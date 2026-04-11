@@ -1,0 +1,23 @@
+.cnt {
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: 2px solid #4a90e2;
+  border-radius: 6px;
+  background-color: #4a90e2;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.cnt:hover {
+  background-color: #357abd;
+}
+
+.cnt:active {
+  transform: scale(0.96);
+}
+
+.cnt span {
+  pointer-events: none;
+}
