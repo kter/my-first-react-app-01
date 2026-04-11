@@ -4,6 +4,7 @@ import './index.css'
 // import App from './App.jsx'
 import MyHello from './MyHello';
 import EventBasic from './EventBasic';
+import StateBasic from './StateBasic';
 
 const root = createRoot(document.getElementById('root'));
 // root.render(
@@ -22,6 +23,7 @@ root.render(
   <>
     <MyHello myName="Takahashi" />
     <EventBasic type="time" />
+    <StateBasic init={0} />
   </>
 );
 
