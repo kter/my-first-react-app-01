@@ -22,6 +22,7 @@ import EventMouse from './EventMouse'
 import EventObj from './EventObj'
 import EventKey from './EventKey'
 import EventArgs from './EventArgs'
+import EventArgs2 from './EventArgs2'
 
 const root = createRoot(document.getElementById('root'));
 // root.render(
@@ -81,6 +82,7 @@ root.render(
     <EventObj />
     <EventKey />
     <EventArgs />
+    <EventArgs2 />
   </>
 );
 
