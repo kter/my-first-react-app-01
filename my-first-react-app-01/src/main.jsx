@@ -5,6 +5,8 @@ import './index.css'
 import MyHello from './MyHello';
 import EventBasic from './EventBasic';
 import StateBasic from './StateBasic';
+import books from './books'
+import ForList from './ForList';
 
 const root = createRoot(document.getElementById('root'));
 // root.render(
@@ -24,6 +26,7 @@ root.render(
     <MyHello myName="Takahashi" />
     <EventBasic type="time" />
     <StateBasic init={0} />
+    <ForList src={books} />
   </>
 );
 
