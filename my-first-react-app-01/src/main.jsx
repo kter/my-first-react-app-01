@@ -21,6 +21,7 @@ import StateParent from './StateParent'
 import EventMouse from './EventMouse'
 import EventObj from './EventObj'
 import EventKey from './EventKey'
+import EventArgs from './EventArgs'
 
 const root = createRoot(document.getElementById('root'));
 // root.render(
@@ -79,6 +80,7 @@ root.render(
       afterSrc="https://www.web-deli.com/image/home_chara.gif" />
     <EventObj />
     <EventKey />
+    <EventArgs />
   </>
 );
 
