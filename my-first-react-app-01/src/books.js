@@ -12,6 +12,13 @@ const books = [
     price: 3000,
     summary: 'summary of book title 2',
     download: false,
+  },
+  {
+    isbn: '000-0-000000000',
+    title: "book title 3",
+    price: 4500,
+    summary: 'summary of book title 3',
+    download: false,
   }
 ];
 export default books;

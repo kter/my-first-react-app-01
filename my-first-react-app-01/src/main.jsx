@@ -8,6 +8,7 @@ import StateBasic from './StateBasic';
 import books from './books'
 import ForList from './ForList';
 import ForNest from './ForNest';
+import ForFilter from './ForFilter';
 
 const root = createRoot(document.getElementById('root'));
 // root.render(
@@ -29,6 +30,7 @@ root.render(
     <StateBasic init={0} />
     <ForList src={books} />
     <ForNest src={books} />
+    <ForFilter src={books} />
   </>
 );
 
