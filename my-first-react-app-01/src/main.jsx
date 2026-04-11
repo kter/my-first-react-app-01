@@ -13,6 +13,7 @@ import ForSort from './ForSort';
 import SelectComp from './SelectComp'
 import SelectStyle from './SelectStyle'
 import StyledPanel from './StyledPanel'
+import TitledPanel from './TitledPanel'
 
 const root = createRoot(document.getElementById('root'));
 // root.render(
@@ -27,6 +28,8 @@ const root = createRoot(document.getElementById('root'));
 //   );
 // }, 1000);
 
+const title = 'TiledPanel Title';
+const body = 'TiledPanel Body';
 root.render(
   <>
     <MyHello myName="Takahashi" />
@@ -41,6 +44,7 @@ root.render(
     <StyledPanel>
       <p>StyledPanel Test!</p>
     </StyledPanel>
+    <TitledPanel title={title} body={body} />
   </>
 );
 
