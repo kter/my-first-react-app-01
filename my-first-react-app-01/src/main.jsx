@@ -2,6 +2,7 @@
 import { createRoot } from 'react-dom/client'
 import './index.css'
 // import App from './App.jsx'
+import MyHello from './MyHello';
 
 const root = createRoot(document.getElementById('root'));
 // root.render(
@@ -10,8 +11,12 @@ const root = createRoot(document.getElementById('root'));
 // 	</StrictMode>,
 // );
 
-setInterval(() => {
-  root.render(
-    <p>current time: {(new Date()).toLocaleString()}</p>
-  );
-}, 1000);
+// setInterval(() => {
+//   root.render(
+//     <p>current time: {(new Date()).toLocaleString()}</p>
+//   );
+// }, 1000);
+
+root.render(
+  <MyHello myName="Takahashi" />
+);
