@@ -37,6 +37,7 @@ import StateTodo from './StateTodo'
 import FormBasic from './FormBasic'
 import LazyBasic from './LazyBasic'
 import LazyMulti from './LazyMulti'
+import SuspenseSimple from './SuspenseSimple'
 
 const root = createRoot(document.getElementById('root'));
 // root.render(
@@ -111,6 +112,7 @@ root.render(
     <FormBasic />
     <LazyBasic />
     <LazyMulti />
+    <SuspenseSimple />
   </>
 );
 
