@@ -53,6 +53,7 @@ import ErrorRetryRoot from './ErrorRetryRoot'
 import ErrorEventRoot from './ErrorEventRoot'
 import MetaBasic from './MetaBasic'
 import ScriptBasic from './ScriptBasic'
+import StyleBasic from './StyleBasic'
 
 const root = createRoot(document.getElementById('root'));
 // root.render(
@@ -144,6 +145,7 @@ root.render(
     <ErrorEventRoot />
     <MetaBasic />
     <ScriptBasic />
+    <StyleBasic />
   </>
 );
 
