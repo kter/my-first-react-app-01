@@ -50,6 +50,7 @@ import MotionNest from './MotionNest'
 import PortalBasic from './PortalBasic'
 import ErrorRoot from './ErrorRoot'
 import ErrorRetryRoot from './ErrorRetryRoot'
+import ErrorEventRoot from './ErrorEventRoot'
 
 const root = createRoot(document.getElementById('root'));
 // root.render(
@@ -138,6 +139,7 @@ root.render(
     <PortalBasic />
     <ErrorRoot />
     <ErrorRetryRoot />
+    <ErrorEventRoot />
   </>
 );
 
