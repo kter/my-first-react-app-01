@@ -9,8 +9,9 @@ export default function FormBasic() {
     memo: ''
   };
 
-  const { register, handleSubmit, formState: { errors } } = useForm({
-    defaultValues
+  const { register, handleSubmit, formState: { errors, isDirty, isValid } } = useForm({
+    defaultValues,
+    mode: 'onChange'
   });
 
   const onsubmit = data => console.log(data);
@@ -75,7 +76,7 @@ export default function FormBasic() {
         <div className="error">{errors.memo?.message}</div>
       </div>
       <div>
-        <button type="submit">Submit</button>
+        <button type="submit" disabled={!isDirty || !isValid}>Submit</button>
       </div>
     </form>
   );
