@@ -23,6 +23,7 @@ import EventObj from './EventObj'
 import EventKey from './EventKey'
 import EventArgs from './EventArgs'
 import EventArgs2 from './EventArgs2'
+import StateForm from './StateForm'
 
 const root = createRoot(document.getElementById('root'));
 // root.render(
@@ -83,6 +84,7 @@ root.render(
     <EventKey />
     <EventArgs />
     <EventArgs2 />
+    <StateForm />
   </>
 );
 
