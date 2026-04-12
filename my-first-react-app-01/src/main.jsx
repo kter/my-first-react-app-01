@@ -25,6 +25,8 @@ import EventArgs from './EventArgs'
 import EventArgs2 from './EventArgs2'
 import StateForm from './StateForm'
 import StateFormUC from './StateFormUC'
+import FormTextarea from './FormTextarea'
+import FormSelect from './FormSelect'
 
 const root = createRoot(document.getElementById('root'));
 // root.render(
@@ -87,6 +89,8 @@ root.render(
     <EventArgs2 />
     <StateForm />
     <StateFormUC />
+    <FormTextarea />
+    <FormSelect />
   </>
 );
 
