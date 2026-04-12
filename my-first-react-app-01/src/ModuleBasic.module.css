@@ -6,3 +6,8 @@
   background-color: royalblue;
   color: white;
 }
+
+.shadowPanel {
+  composes: panel;
+  box-shadow: 0 0 15px #000;
+}
