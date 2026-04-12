@@ -30,6 +30,7 @@ import FormSelect from './FormSelect'
 import FormList from './FormList'
 import FormRadio from './FormRadio'
 import FormCheck from './FormCheck'
+import FormCheckMulti from './FormCheckMulti'
 
 const root = createRoot(document.getElementById('root'));
 // root.render(
@@ -97,6 +98,7 @@ root.render(
     <FormList />
     <FormRadio />
     <FormCheck />
+    <FormCheckMulti />
   </>
 );
 
