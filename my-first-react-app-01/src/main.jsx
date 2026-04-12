@@ -54,6 +54,8 @@ import ErrorEventRoot from './ErrorEventRoot'
 import MetaBasic from './MetaBasic'
 import ScriptBasic from './ScriptBasic'
 import StyleBasic from './StyleBasic'
+import MaterialBasic from './MaterialBasic'
+import MaterialDrawer from './MaterialDrawer'
 
 const root = createRoot(document.getElementById('root'));
 // root.render(
@@ -146,6 +148,8 @@ root.render(
     <MetaBasic />
     <ScriptBasic />
     <StyleBasic />
+    <MaterialBasic />
+    <MaterialDrawer />
   </>
 );
 
