@@ -32,6 +32,7 @@ import FormRadio from './FormRadio'
 import FormCheck from './FormCheck'
 import FormCheckMulti from './FormCheckMulti'
 import FormFile from './FormFile'
+import StateNest from './StateNest'
 
 const root = createRoot(document.getElementById('root'));
 // root.render(
@@ -101,6 +102,7 @@ root.render(
     <FormCheck />
     <FormCheckMulti />
     <FormFile />
+    <StateNest />
   </>
 );
 
