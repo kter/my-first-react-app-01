@@ -49,6 +49,7 @@ import MotionVariant from './MotionVariant'
 import MotionNest from './MotionNest'
 import PortalBasic from './PortalBasic'
 import ErrorRoot from './ErrorRoot'
+import ErrorRetryRoot from './ErrorRetryRoot'
 
 const root = createRoot(document.getElementById('root'));
 // root.render(
@@ -136,6 +137,7 @@ root.render(
     <div id="dialog"></div>
     <PortalBasic />
     <ErrorRoot />
+    <ErrorRetryRoot />
   </>
 );
 
