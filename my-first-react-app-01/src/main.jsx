@@ -33,6 +33,7 @@ import FormCheck from './FormCheck'
 import FormCheckMulti from './FormCheckMulti'
 import FormFile from './FormFile'
 import StateNest from './StateNest'
+import StateTodo from './StateTodo'
 
 const root = createRoot(document.getElementById('root'));
 // root.render(
@@ -103,6 +104,7 @@ root.render(
     <FormCheckMulti />
     <FormFile />
     <StateNest />
+    <StateTodo />
   </>
 );
 
