@@ -47,6 +47,7 @@ import MotionWhile from './MotionWhile'
 import MotionExit from './MotionExit'
 import MotionVariant from './MotionVariant'
 import MotionNest from './MotionNest'
+import PortalBasic from './PortalBasic'
 
 const root = createRoot(document.getElementById('root'));
 // root.render(
@@ -131,6 +132,8 @@ root.render(
     <MotionExit />
     <MotionVariant />
     <MotionNest />
+    <div id="dialog"></div>
+    <PortalBasic />
   </>
 );
 
