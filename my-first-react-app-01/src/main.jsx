@@ -35,6 +35,8 @@ import FormFile from './FormFile'
 import StateNest from './StateNest'
 import StateTodo from './StateTodo'
 import FormBasic from './FormBasic'
+import LazyBasic from './LazyBasic'
+import LazyMulti from './LazyMulti'
 
 const root = createRoot(document.getElementById('root'));
 // root.render(
@@ -107,6 +109,8 @@ root.render(
     <StateNest />
     <StateTodo />
     <FormBasic />
+    <LazyBasic />
+    <LazyMulti />
   </>
 );
 
