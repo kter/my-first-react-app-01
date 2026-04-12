@@ -40,6 +40,7 @@ import LazyMulti from './LazyMulti'
 import SuspenseSimple from './SuspenseSimple'
 import SuspenseResult from './SuspenseResult'
 import ModuleBasic from './ModuleBasic'
+import ModuleNest from './ModuleNest'
 
 const root = createRoot(document.getElementById('root'));
 // root.render(
@@ -117,6 +118,7 @@ root.render(
     <SuspenseSimple />
     <SuspenseResult />
     <ModuleBasic />
+    <ModuleNest />
   </>
 );
 
