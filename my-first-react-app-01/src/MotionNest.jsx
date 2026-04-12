@@ -9,7 +9,7 @@ export default function MotionNest() {
 
   const item = {
     hidden: { x: '100vw', opacity: 0 },
-    show: { x: 0, opacity: 1, transition: { duration: 0.3 } }
+    show: { x: 0, opacity: 1, transition: { duration: 0.3, when: 'beforeChildren' } }
   };
 
   return (
