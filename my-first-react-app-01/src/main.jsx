@@ -45,6 +45,8 @@ import EmotionBasic from './EmotionBasic'
 import MotionBasic from './MotionBasic'
 import MotionWhile from './MotionWhile'
 import MotionExit from './MotionExit'
+import MotionVariant from './MotionVariant'
+import MotionNest from './MotionNest'
 
 const root = createRoot(document.getElementById('root'));
 // root.render(
@@ -127,6 +129,8 @@ root.render(
     <MotionBasic />
     <MotionWhile />
     <MotionExit />
+    <MotionVariant />
+    <MotionNest />
   </>
 );
 
