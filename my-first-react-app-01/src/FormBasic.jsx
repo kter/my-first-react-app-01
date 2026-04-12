@@ -64,7 +64,13 @@ export default function FormBasic() {
             minLength: {
               value: 10,
               message: 'Memo must be at least 10 characters'
-            }
+            },
+            validate: {
+              ng: (value, formValues) => {
+                const ngs = ['cat', 'dog'];
+                return ngs.some(ng => value.includes(ng)) ? 'ng words exists' : true;
+              }
+            },
           })} />
         <div className="error">{errors.memo?.message}</div>
       </div>
