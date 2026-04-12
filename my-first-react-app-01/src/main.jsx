@@ -41,6 +41,7 @@ import SuspenseSimple from './SuspenseSimple'
 import SuspenseResult from './SuspenseResult'
 import ModuleBasic from './ModuleBasic'
 import ModuleNest from './ModuleNest'
+import EmotionBasic from './EmotionBasic'
 
 const root = createRoot(document.getElementById('root'));
 // root.render(
@@ -119,6 +120,7 @@ root.render(
     <SuspenseResult />
     <ModuleBasic />
     <ModuleNest />
+    <EmotionBasic />
   </>
 );
 
