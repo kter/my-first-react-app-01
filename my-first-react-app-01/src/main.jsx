@@ -56,6 +56,7 @@ import ScriptBasic from './ScriptBasic'
 import StyleBasic from './StyleBasic'
 import MaterialBasic from './MaterialBasic'
 import MaterialDrawer from './MaterialDrawer'
+import MaterialGrid from './MaterialGrid'
 
 const root = createRoot(document.getElementById('root'));
 // root.render(
@@ -150,6 +151,7 @@ root.render(
     <StyleBasic />
     <MaterialBasic />
     <MaterialDrawer />
+    <MaterialGrid />
   </>
 );
 
