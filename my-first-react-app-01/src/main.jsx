@@ -58,6 +58,9 @@ import MaterialBasic from './MaterialBasic'
 import MaterialDrawer from './MaterialDrawer'
 import MaterialGrid from './MaterialGrid'
 import MaterialGrid2 from './MaterialGrid2'
+import { CssBaseline, ThemeProvider } from '@mui/material';
+import theme from './theme'
+import MaterialMode from './MaterialMode';
 
 const root = createRoot(document.getElementById('root'));
 // root.render(
@@ -154,6 +157,13 @@ root.render(
     <MaterialDrawer />
     <MaterialGrid />
     <MaterialGrid2 />
+    <ThemeProvider theme={theme}>
+      // ブラウザー規定のスタイルシートを正規化し、環境による見た目のさいを吸収（normalize.cssと同じ)
+      <CssBaseline />
+      <MaterialBasic />
+    </ThemeProvider>
+    MaterialMode
+    <MaterialMode />
   </>
 );
 
