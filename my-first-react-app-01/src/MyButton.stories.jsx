@@ -28,3 +28,10 @@ export const White = {
     backgroundColor: '#fff'
   }
 };
+
+export const Yellow = {
+  args: {
+    ...White.args,
+    backgroundColor: 'lightyellow'
+  }
+};
