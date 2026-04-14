@@ -4,7 +4,8 @@ import { userEvent, within, expect, fn } from 'storybook/test';
 export default {
   title: 'MyApp/MyButton',
   component: MyButton,
-  tags: ['autodocs'],
+  // MyButton.mdxを使うのでコメントアウト
+  // tags: ['autodocs'],
   parameters: {
     layout: 'centered',
   },

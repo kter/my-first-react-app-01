@@ -1,0 +1,22 @@
+import { Meta, Title, Description, Primary, Controls, Canvas } from '@storybook/addon-docs/blocks';
+import * as MyButtonStories from './MyButton.stories';
+
+<Meta of={MyButtonStories} />
+
+<Title />
+
+<Description />
+
+<Primary />
+
+<Controls />
+
+**※見た目を変更するには表内のControl列を操作してください。**
+
+## 具体的な例
+
+backgroundColor属性でボタンの背景色を変更できます。
+
+<Canvas of={MyButtonStories.Yellow} />
+
+
