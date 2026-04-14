@@ -3,6 +3,29 @@ import MyButton from './MyButton'
 export default {
   title: 'MyApp/MyButton',
   component: MyButton,
+  argTypes: {
+    primary: {
+      type: 'boolean',
+      description: 'Primary color',
+    },
+    backgroundcolor: {
+      type: 'string',
+      description: 'background color'
+    },
+    size: {
+      type: 'enum',
+      options: ['small', 'medium', 'large'],
+      description: 'button size'
+    },
+    label: {
+      type: 'string',
+      description: 'button of caption'
+    },
+    onClick: {
+      type: 'function',
+      description: 'click handler'
+    },
+  },
 };
 
 // export const Index = {
