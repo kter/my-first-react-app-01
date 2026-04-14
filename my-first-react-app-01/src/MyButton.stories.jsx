@@ -1,4 +1,5 @@
 import MyButton from './MyButton'
+import { userEvent, within, expect, fn } from 'storybook/test';
 
 export default {
   title: 'MyApp/MyButton',
@@ -23,7 +24,7 @@ export default {
     },
     onClick: {
       type: 'function',
-      description: 'click handler'
+      description: 'click handler',
     },
   },
 };
@@ -37,8 +38,15 @@ export const Index = {
     primary: true,
     size: 'medium',
     label: 'Button',
-    onClick: () => console.log('Hello, Storybook')
-  }
+    onClick: fn(),
+  },
+  play: async ({ args, canvasElement }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole('button');
+    await userEvent.click(button);
+    await userEvent.click(button);
+    await expect(args.onClick).toHaveBeenCalledTimes(2);
+  },
 };
 
 // export const White = {
