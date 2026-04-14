@@ -4,6 +4,7 @@ import { userEvent, within, expect, fn } from 'storybook/test';
 export default {
   title: 'MyApp/MyButton',
   component: MyButton,
+  tags: ['autodocs'],
   parameters: {
     layout: 'centered',
   },
