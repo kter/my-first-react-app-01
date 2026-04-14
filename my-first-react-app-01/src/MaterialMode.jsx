@@ -3,7 +3,9 @@ import { CssBaseline, Button } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { amber, grey } from '@mui/material/colors';
 
+
 export default function MaterialMode() {
+  // const mode = useMediaQuery('(prefers-color-scheme: dark)') ? 'dark' : 'light';
   const [mode, setMode] = useState('light');
   const toggleMode = () => setMode(prev =>
     prev === 'light' ? 'dark' : 'light'

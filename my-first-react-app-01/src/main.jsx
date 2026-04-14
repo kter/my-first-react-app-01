@@ -61,6 +61,7 @@ import MaterialGrid2 from './MaterialGrid2'
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import theme from './theme'
 import MaterialMode from './MaterialMode';
+import FormMui from './FormMui';
 
 const root = createRoot(document.getElementById('root'));
 // root.render(
@@ -164,6 +165,7 @@ root.render(
     </ThemeProvider>
     MaterialMode
     <MaterialMode />
+    <FormMui />
   </>
 );
 
