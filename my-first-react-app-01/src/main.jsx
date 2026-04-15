@@ -66,7 +66,9 @@ import SWRPre from './SWRPre';
 import SWRBasic from './SWRBasic';
 import SWRApp from './SWRApp';
 import SWRApp2 from './SWRApp2';
-import StateEffect from './StateEffect'
+import StateEffect from './StateEffect';
+import HookTimer from './HookTimer';
+import HookEffect from './HookEffect';
 
 const root = createRoot(document.getElementById('root'));
 // root.render(
@@ -176,6 +178,9 @@ root.render(
     <SWRApp />
     <SWRApp2 />
     <StateEffect init={0} />
+    <HookTimer init={10} />
+  HookEffect
+    <HookEffect init={10} />
   </>
 );
 
