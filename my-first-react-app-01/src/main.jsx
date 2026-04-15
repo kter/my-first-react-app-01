@@ -66,6 +66,7 @@ import SWRPre from './SWRPre';
 import SWRBasic from './SWRBasic';
 import SWRApp from './SWRApp';
 import SWRApp2 from './SWRApp2';
+import StateEffect from './StateEffect'
 
 const root = createRoot(document.getElementById('root'));
 // root.render(
@@ -174,6 +175,7 @@ root.render(
     <SWRBasic />
     <SWRApp />
     <SWRApp2 />
+    <StateEffect init={0} />
   </>
 );
 
