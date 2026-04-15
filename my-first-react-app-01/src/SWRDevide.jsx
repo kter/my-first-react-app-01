@@ -2,6 +2,7 @@ import useSWR from 'swr';
 
 function useWeather() {
   const endpoint = `https://api.openweathermap.org/data/2.5/weather?q=Tokyo&lang=ja&appid=${import.meta.env.VITE_APPID}`;
+  // compare関数を使うことで、結果が変化した際の再描画ルールを置き換えることができる
   const { data } = useSWR(endpoint);
   return data;
 }
