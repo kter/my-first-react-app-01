@@ -64,6 +64,7 @@ import MaterialMode from './MaterialMode';
 import FormMui from './FormMui';
 import SWRPre from './SWRPre';
 import SWRBasic from './SWRBasic';
+import SWRApp from './SWRApp';
 
 const root = createRoot(document.getElementById('root'));
 // root.render(
@@ -170,6 +171,7 @@ root.render(
     <FormMui />
     <SWRPre />
     <SWRBasic />
+    <SWRApp />
   </>
 );
 
