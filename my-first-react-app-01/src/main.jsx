@@ -69,6 +69,8 @@ import SWRApp2 from './SWRApp2';
 import StateEffect from './StateEffect';
 import HookTimer from './HookTimer';
 import HookEffect from './HookEffect';
+import HookRefNg from './HookRefNg';
+import HookRef from './HookRef';
 
 const root = createRoot(document.getElementById('root'));
 // root.render(
@@ -181,6 +183,8 @@ root.render(
     <HookTimer init={10} />
   HookEffect
     <HookEffect init={10} />
+    <HookRefNg />
+    <hookRef />
   </>
 );
 
