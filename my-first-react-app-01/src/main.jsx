@@ -74,6 +74,7 @@ import HookRef from './HookRef';
 import HookRefForward from './HookRefForward';
 import MyTextBox2 from './MyTextBox2';
 import HookCallbackRef from './HookCallbackRef';
+import HookCallbackRef2 from './HookCallbackRef2';
 
 const root = createRoot(document.getElementById('root'));
 // root.render(
@@ -191,6 +192,7 @@ root.render(
     <HookRefForward />
     <MyTextBox2 />
     <HookCallbackRef />
+    <HookCallbackRef2 />
   </>
 );
 
