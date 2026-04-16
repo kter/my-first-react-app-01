@@ -71,6 +71,7 @@ import HookTimer from './HookTimer';
 import HookEffect from './HookEffect';
 import HookRefNg from './HookRefNg';
 import HookRef from './HookRef';
+import HookRefForward from './HookRefForward';
 
 const root = createRoot(document.getElementById('root'));
 // root.render(
@@ -184,7 +185,8 @@ root.render(
   HookEffect
     <HookEffect init={10} />
     <HookRefNg />
-    <hookRef />
+    <HookRef />
+    <HookRefForward />
   </>
 );
 
