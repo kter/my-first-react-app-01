@@ -72,6 +72,7 @@ import HookEffect from './HookEffect';
 import HookRefNg from './HookRefNg';
 import HookRef from './HookRef';
 import HookRefForward from './HookRefForward';
+import MyTextBox2 from './MyTextBox2';
 
 const root = createRoot(document.getElementById('root'));
 // root.render(
@@ -187,6 +188,7 @@ root.render(
     <HookRefNg />
     <HookRef />
     <HookRefForward />
+    <MyTextBox2 />
   </>
 );
 
