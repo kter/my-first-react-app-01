@@ -76,6 +76,7 @@ import MyTextBox2 from './MyTextBox2';
 import HookCallbackRef from './HookCallbackRef';
 import HookCallbackRef2 from './HookCallbackRef2';
 import HookReducer from './HookReducer';
+import HookReducerUp from './HookReducerUp';
 
 const root = createRoot(document.getElementById('root'));
 // root.render(
@@ -195,6 +196,7 @@ root.render(
     <HookCallbackRef />
     <HookCallbackRef2 />
     <HookReducer init={0} />
+    <HookReducerUp init={0}/>
   </>
 );
 
