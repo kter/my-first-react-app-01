@@ -77,6 +77,7 @@ import HookCallbackRef from './HookCallbackRef';
 import HookCallbackRef2 from './HookCallbackRef2';
 import HookReducer from './HookReducer';
 import HookReducerUp from './HookReducerUp';
+import HookContext from './HookContext';
 
 const root = createRoot(document.getElementById('root'));
 // root.render(
@@ -196,7 +197,7 @@ root.render(
     <HookCallbackRef />
     <HookCallbackRef2 />
     <HookReducer init={0} />
-    <HookReducerUp init={0}/>
+    <HookContext />
   </>
 );
 
