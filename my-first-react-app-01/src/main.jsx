@@ -82,7 +82,7 @@ import HookContext from './HookContext';
 import MyThemeProvider from './MyThemeProvider';
 import HookThemeButton from './HookThemeButton';
 import UsePromise from './UsePromise';
-import { Provider } from 'jotai';
+import { createStore, Provider } from 'jotai';
 import JotaiCounter from './JotaiCounter';
 import JotaiTodo from './JotaiTodo';
 import JotaiTodoUp from './JotaiTodoUp';
@@ -108,6 +108,8 @@ function fetchInfo() {
     setTimeout(() => resolve('Result promise'), 5000);
   });
 }
+
+const store = createStore();
 
 root.render(
   <>
@@ -222,13 +224,13 @@ root.render(
     <JotaiCounter />
     <JotaiTodo />
     <JotaiTodoUp />
-    <Provider>
+    <Provider store={store}>
       <JotaiCounter />
     </Provider>
     <Provider>
       <JotaiCounter />
     </Provider>
-    <Provider>
+    <Provider store={store}>
       <JotaiCounter />
     </Provider>
   </>
