@@ -82,6 +82,7 @@ import HookContext from './HookContext';
 import MyThemeProvider from './MyThemeProvider';
 import HookThemeButton from './HookThemeButton';
 import UsePromise from './UsePromise';
+import { Provider } from 'jotai';
 import JotaiCounter from './JotaiCounter';
 import JotaiTodo from './JotaiTodo';
 import JotaiTodoUp from './JotaiTodoUp';
@@ -221,6 +222,15 @@ root.render(
     <JotaiCounter />
     <JotaiTodo />
     <JotaiTodoUp />
+    <Provider>
+      <JotaiCounter />
+    </Provider>
+    <Provider>
+      <JotaiCounter />
+    </Provider>
+    <Provider>
+      <JotaiCounter />
+    </Provider>
   </>
 );
 
