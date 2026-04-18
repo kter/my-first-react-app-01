@@ -82,6 +82,7 @@ import HookContext from './HookContext';
 import MyThemeProvider from './MyThemeProvider';
 import HookThemeButton from './HookThemeButton';
 import UsePromise from './UsePromise';
+import JotaiCounter from './JotaiCounter';
 
 const root = createRoot(document.getElementById('root'));
 // root.render(
@@ -215,6 +216,7 @@ root.render(
     <Suspense fallback={<div>Loading...</div>}>
       <UsePromise service={fetchInfo()} />
     </Suspense>
+    <JotaiCounter />
   </>
 );
 
