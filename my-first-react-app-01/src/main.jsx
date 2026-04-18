@@ -84,6 +84,7 @@ import HookThemeButton from './HookThemeButton';
 import UsePromise from './UsePromise';
 import JotaiCounter from './JotaiCounter';
 import JotaiTodo from './JotaiTodo';
+import JotaiTodoUp from './JotaiTodoUp';
 
 const root = createRoot(document.getElementById('root'));
 // root.render(
@@ -219,6 +220,7 @@ root.render(
     </Suspense>
     <JotaiCounter />
     <JotaiTodo />
+    <JotaiTodoUp />
   </>
 );
 
