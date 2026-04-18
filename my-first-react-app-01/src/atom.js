@@ -1,7 +1,7 @@
 import { atom } from 'jotai';
-import { atomWithReset } from 'jotai/utils';
+import { atomWithReset, atomWithStorage } from 'jotai/utils';
 
-export const todosAtom = atom([
+export const todosAtom = atomWithStorage('todos', [
   {
     id: 1,
       title: 'title 1',
