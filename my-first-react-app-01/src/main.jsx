@@ -1,5 +1,6 @@
 // import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import { Suspense } from 'react'
 import './index.css'
 // import App from './App.jsx'
 import MyHello from './MyHello';
@@ -80,6 +81,7 @@ import HookReducerUp from './HookReducerUp';
 import HookContext from './HookContext';
 import MyThemeProvider from './MyThemeProvider';
 import HookThemeButton from './HookThemeButton';
+import UsePromise from './UsePromise';
 
 const root = createRoot(document.getElementById('root'));
 // root.render(
@@ -96,6 +98,13 @@ const root = createRoot(document.getElementById('root'));
 
 const title = 'TiledPanel Title';
 const body = 'TiledPanel Body';
+
+function fetchInfo() {
+  return new Promise(resolve => {
+    setTimeout(() => resolve('Result promise'), 5000);
+  });
+}
+
 root.render(
   <>
     <MyHello myName="Takahashi" />
@@ -203,6 +212,9 @@ root.render(
     <MyThemeProvider>
       <HookThemeButton />
     </MyThemeProvider>
+    <Suspense fallback={<div>Loading...</div>}>
+      <UsePromise service={fetchInfo()} />
+    </Suspense>
   </>
 );
 
