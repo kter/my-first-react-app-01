@@ -83,6 +83,7 @@ import MyThemeProvider from './MyThemeProvider';
 import HookThemeButton from './HookThemeButton';
 import UsePromise from './UsePromise';
 import JotaiCounter from './JotaiCounter';
+import JotaiTodo from './JotaiTodo';
 
 const root = createRoot(document.getElementById('root'));
 // root.render(
@@ -217,6 +218,7 @@ root.render(
       <UsePromise service={fetchInfo()} />
     </Suspense>
     <JotaiCounter />
+    <JotaiTodo />
   </>
 );
 
