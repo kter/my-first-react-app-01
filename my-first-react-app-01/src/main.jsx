@@ -78,6 +78,8 @@ import HookCallbackRef2 from './HookCallbackRef2';
 import HookReducer from './HookReducer';
 import HookReducerUp from './HookReducerUp';
 import HookContext from './HookContext';
+import MyThemeProvider from './MyThemeProvider';
+import HookThemeButton from './HookThemeButton';
 
 const root = createRoot(document.getElementById('root'));
 // root.render(
@@ -198,6 +200,9 @@ root.render(
     <HookCallbackRef2 />
     <HookReducer init={0} />
     <HookContext />
+    <MyThemeProvider>
+      <HookThemeButton />
+    </MyThemeProvider>
   </>
 );
 
