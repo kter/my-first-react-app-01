@@ -5,6 +5,7 @@ import HookDeferred from './HookDeferred';
 import HookDeferredTransition from './HookDeferredTransition';
 import ActionPre from './ActionPre';
 import ActionBasic from './ActionBasic';
+import ActionOptimistic from './ActionOptimistic';
 
 const root = createRoot(document.getElementById('root'));
 
@@ -16,6 +17,7 @@ root.render(
     <HookDeferredTransition />
     <ActionPre />
     <ActionBasic />
+    <ActionOptimistic />
   </>
 );
 
