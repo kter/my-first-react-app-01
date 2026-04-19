@@ -26,7 +26,7 @@ export default function HookTransition() {
       </select>
       <BookDetails isbn={isbn} />
       <hr />
-      <CommentList src={comments} />
+      <CommentList src={comments} isPending={isPending} />
     </>
   );
 }
