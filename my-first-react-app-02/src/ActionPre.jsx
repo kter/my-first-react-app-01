@@ -9,7 +9,7 @@ export default function BookForm() {
   const submitAction = async e => {
     e.preventDefault();
     setIsPending(true);
-    const { result, error } = await updateForm({
+    const { result, errors } = await updateForm({
       id: crypto.randomUUID(),
       title: e.target.title.value,
       price: e.target.price.value,
