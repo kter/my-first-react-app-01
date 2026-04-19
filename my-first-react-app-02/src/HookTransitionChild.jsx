@@ -14,7 +14,7 @@ export function BookDetails({ isbn }) {
       <li>Title: {book?.title}</li>
       <li>Price: {book?.price}</li>
       <li>Detail: {book?.summary}</li>
-      <li>Download: {book?.download) ? 'Yes' : 'No' }</li>
+      <li>Download: {(book?.download) ? 'Yes' : 'No'}</li>
     </ul>
   );
 }
