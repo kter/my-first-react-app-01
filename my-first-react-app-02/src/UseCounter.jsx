@@ -1,4 +1,4 @@
-import { useReducer } from 'react';
+import { useReducer, useDebugValue } from 'react';
 
 export default function useCounter(init, step) {
   const [state, dispatch] = useReducer(
@@ -16,6 +16,7 @@ export default function useCounter(init, step) {
       count: init
     }
   );
+  useDebugValue(state.count >= 10 ? 'over 10' : 'less than 10');
 
   const handleUp = () => dispatch({ type: 'update', step });
   const handleDown = () => dispatch({ type: 'update', step: -step });
