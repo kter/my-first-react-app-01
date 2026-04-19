@@ -1,5 +1,6 @@
 import { useActionState, useOptimistic, useState } from 'react';
 import { updateForm } from './actions';
+import ActionSpinner from './ActionSpinner';
 
 export default function ActionOptimistic() {
   const [books, setBooks] = useState([]);
@@ -35,6 +36,7 @@ export default function ActionOptimistic() {
 
   return (
     <form noValidate action={submitAction}>
+      <ActionSpinner />
       <ul>
         {error?.map(msg => <li key={msg}>{msg}</li>)}
       </ul>
