@@ -12,4 +12,9 @@ export default defineConfig({
       image: path.resolve(__dirname, 'src/image'),
     },
   },
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: ['./vitest-setup.js']
+  }
 });
