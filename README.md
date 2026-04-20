@@ -605,6 +605,95 @@ export default function Modal({ show, onClose }) {
 
 ---
 
+## ドキュメントメタデータ（React 19）
+
+React 19 では、`<title>`・`<meta>`・`<link>`・`<script>` をコンポーネントの中に直接書くと、React が自動的に `<head>` 内に配置してくれます。以前は `react-helmet` などの外部ライブラリが必要でしたが、React 19 からはネイティブで対応しています。
+
+### `<title>` / `<meta>` の動的操作
+
+```jsx
+export default function ArticlePage({ title, description }) {
+  return (
+    <div>
+      {/* JSX の中に書くだけで <head> に自動配置される */}
+      <title>{title}</title>
+      <meta name="description" content={description} />
+
+      <h1>{title}</h1>
+      <p>記事の本文...</p>
+    </div>
+  );
+}
+```
+
+> **ポイント**: コンポーネントがアンマウントされると `<head>` から自動で取り除かれます。ページ遷移時にタイトルを動的に変えたいケースに便利です。
+
+### `<script>` の動的読み込み
+
+```jsx
+export function ExternalWidget() {
+  return (
+    <div className="widget">
+      {/* async でスクリプトを非同期読み込み。同じ src は重複排除される */}
+      <script src="https://cdn.example.com/widget.js" async />
+      <div id="widget-root" />
+    </div>
+  );
+}
+
+export function AnotherWidget() {
+  return (
+    <div>
+      {/* 同じ src を複数コンポーネントで書いても 1 回しか読み込まれない */}
+      <script src="https://cdn.example.com/widget.js" async />
+      <div id="another-widget" />
+    </div>
+  );
+}
+```
+
+> **ポイント**: 同じ `src` の `<script>` が複数のコンポーネントに書かれていても、React が重複排除して 1 回だけ読み込みます。
+
+### `<link>` と `precedence` による CSS 優先度制御
+
+`<link rel="stylesheet">` を コンポーネント内で使うと、React が Suspense と連携して「CSS の読み込みが完了してからコンポーネントを表示」するよう制御できます。`precedence` 属性で複数 CSS の適用順も指定できます。
+
+```jsx
+import { Suspense } from 'react';
+
+function StyledSection() {
+  return (
+    <>
+      {/* precedence="low" / "high" で <head> 内の挿入順序を制御 */}
+      <link
+        rel="stylesheet"
+        href="https://cdn.example.com/base.css"
+        precedence="low"
+      />
+      <link
+        rel="stylesheet"
+        href="https://cdn.example.com/theme.css"
+        precedence="high"  {/* high が low より先に適用される */}
+      />
+      <div className="themed-content">コンテンツ</div>
+    </>
+  );
+}
+
+export default function App() {
+  return (
+    {/* CSS の読み込みが完了するまで fallback を表示 */}
+    <Suspense fallback={<p>スタイル読み込み中...</p>}>
+      <StyledSection />
+    </Suspense>
+  );
+}
+```
+
+> **ポイント**: `precedence` の値は `"low"` / `"high"` のような任意の文字列で、値が小さいほど後に適用されます（アルファベット順）。CSS の詳細度を制御したい場合に使います。スタイルの読み込み完了を Suspense に委ねることで、スタイルが当たっていない状態でコンテンツが表示される「スタイルなしコンテンツの瞬間表示（FOUC）」を防げます。
+
+---
+
 ## スタイリング手法
 
 React では複数のスタイリング手法を選べます。
