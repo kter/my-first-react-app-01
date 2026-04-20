@@ -3,21 +3,21 @@ from pptx.util import Inches, Pt
 from pptx.dml.color import RGBColor
 from pptx.enum.text import PP_ALIGN
 
-# ── Colors ──────────────────────────────────────────────────
-C_BG       = RGBColor(0x20, 0x23, 0x2A)
-C_HEADER   = RGBColor(0x28, 0x2C, 0x34)
-C_CODE_BG  = RGBColor(0x1E, 0x22, 0x27)
-C_DIVIDER  = RGBColor(0x44, 0x47, 0x54)
-C_NOTE_BG  = RGBColor(0x2C, 0x31, 0x3A)
-C_ACCENT   = RGBColor(0x61, 0xDA, 0xFB)   # React blue
-C_GREEN    = RGBColor(0x98, 0xC3, 0x79)
-C_YELLOW   = RGBColor(0xE5, 0xC0, 0x7B)
-C_PURPLE   = RGBColor(0xC6, 0x78, 0xDD)
-C_RED      = RGBColor(0xE0, 0x60, 0x60)
-C_WHITE    = RGBColor(0xFF, 0xFF, 0xFF)
-C_GRAY     = RGBColor(0xAB, 0xB2, 0xBF)
-C_DARKROW  = RGBColor(0x28, 0x2C, 0x34)
-C_LIGHTROW = RGBColor(0x2C, 0x31, 0x3A)
+# ── Colors (white/light theme) ──────────────────────────────
+C_BG       = RGBColor(0xFF, 0xFF, 0xFF)   # white background
+C_HEADER   = RGBColor(0x00, 0x78, 0xD4)   # React-ish blue header bar
+C_CODE_BG  = RGBColor(0xF3, 0xF4, 0xF6)   # light gray code block
+C_DIVIDER  = RGBColor(0xCC, 0xD0, 0xD9)   # light divider
+C_NOTE_BG  = RGBColor(0xFF, 0xF8, 0xE1)   # pale yellow note
+C_ACCENT   = RGBColor(0x00, 0x78, 0xD4)   # blue (readable on white)
+C_GREEN    = RGBColor(0x1A, 0x7F, 0x37)   # dark green
+C_YELLOW   = RGBColor(0x9A, 0x6A, 0x00)   # dark amber
+C_PURPLE   = RGBColor(0x6F, 0x2D, 0xA8)   # dark purple
+C_RED      = RGBColor(0xC0, 0x27, 0x27)   # dark red
+C_WHITE    = RGBColor(0xFF, 0xFF, 0xFF)   # white (for header text)
+C_GRAY     = RGBColor(0x44, 0x47, 0x54)   # dark gray body text
+C_DARKROW  = RGBColor(0xF7, 0xF8, 0xFA)   # table row even
+C_LIGHTROW = RGBColor(0xED, 0xEF, 0xF2)   # table row odd
 
 prs = Presentation()
 prs.slide_width  = Inches(13.33)
@@ -38,7 +38,7 @@ def rect(slide, l, t, w, h, fill, line=None):
     return s
 
 def txt(slide, text, l, t, w, h,
-        size=16, bold=False, color=C_WHITE, align=PP_ALIGN.LEFT, wrap=True):
+        size=16, bold=False, color=C_GRAY, align=PP_ALIGN.LEFT, wrap=True):
     tb = slide.shapes.add_textbox(Inches(l), Inches(t), Inches(w), Inches(h))
     tf = tb.text_frame; tf.word_wrap = wrap
     p  = tf.paragraphs[0]; p.alignment = align
@@ -57,14 +57,14 @@ def code_block(slide, code, l, t, w, h, size=10.5):
         p = tf.paragraphs[0] if first else tf.add_paragraph()
         first = False
         r = p.add_run(); r.text = line
-        r.font.size = Pt(size); r.font.color.rgb = C_GREEN
+        r.font.size = Pt(size); r.font.color.rgb = RGBColor(0x1A, 0x56, 0x76)
         r.font.name = "Courier New"
 
 # ── Slide templates ──────────────────────────────────────────
 def page_header(slide, title):
     rect(slide, 0, 0, 13.33, 0.95, C_HEADER)
-    rect(slide, 0, 0, 0.38,  0.95, C_ACCENT)
-    txt(slide, title, 0.55, 0.08, 12.6, 0.8, size=26, bold=True)
+    rect(slide, 0, 0, 0.38,  0.95, RGBColor(0x00, 0x50, 0x9E))
+    txt(slide, title, 0.55, 0.08, 12.6, 0.8, size=26, bold=True, color=C_WHITE)
 
 def note_bar(slide, text, t, h=0.45):
     rect(slide, 0.4, t, 12.5, h, C_NOTE_BG)
@@ -86,7 +86,7 @@ def section_slide(num, title):
     rect(slide, 0, 0, 0.1, 7.5, C_ACCENT)
     rect(slide, 0.3, 3.15, 12.7, 0.07, C_DIVIDER)
     txt(slide, f"Chapter {num}", 0.5, 2.3,  12.0, 0.6, size=16, color=C_ACCENT)
-    txt(slide, title,           0.5, 2.85, 12.0, 1.2, size=40, bold=True)
+    txt(slide, title,           0.5, 2.85, 12.0, 1.2, size=40, bold=True, color=RGBColor(0x1A, 0x1A, 0x2E))
 
 def bullets_slide(title, items):
     """items: list of (text, level, style)
@@ -107,7 +107,7 @@ def bullets_slide(title, items):
         indent = 0.4 + level * 0.45
         dot_c  = [C_ACCENT, C_GREEN, C_YELLOW][min(level, 2)]
         txt(slide, "●", indent, y+0.04, 0.3, 0.32, size=9, color=dot_c)
-        fc = C_WHITE if level == 0 else C_GRAY
+        fc = RGBColor(0x1A, 0x1A, 0x2E) if level == 0 else C_GRAY
         txt(slide, text, indent+0.28, y, 12.5-indent, 0.38, size=15, color=fc)
         y += 0.4
 
@@ -130,12 +130,12 @@ def two_col_slide(title, left_items, right_items):
     rect(slide, 6.62, 1.05, 0.06, 6.3, C_DIVIDER)
     y = 1.1
     for text, bold, color in left_items:
-        c = color or C_WHITE
+        c = color or C_GRAY
         txt(slide, text, 0.4, y, 6.0, 0.42, size=14, bold=bold, color=c)
         y += 0.42
     y = 1.1
     for text, bold, color in right_items:
-        c = color or C_WHITE
+        c = color or C_GRAY
         txt(slide, text, 6.8, y, 6.0, 0.42, size=14, bold=bold, color=c)
         y += 0.42
 
@@ -147,8 +147,8 @@ def table_slide(title, headers, rows, col_widths=None):
     lx, rh = 0.4, 0.48
     x = lx
     for h, w in zip(headers, cw):
-        rect(slide, x, 1.05, w, rh, RGBColor(0x3A,0x3F,0x4B))
-        txt(slide, h, x+0.1, 1.07, w-0.2, rh-0.06, size=13, bold=True, color=C_ACCENT)
+        rect(slide, x, 1.05, w, rh, C_HEADER)
+        txt(slide, h, x+0.1, 1.07, w-0.2, rh-0.06, size=13, bold=True, color=C_WHITE)
         x += w
     for ri, row in enumerate(rows):
         ry = 1.05 + rh*(ri+1)
@@ -156,7 +156,7 @@ def table_slide(title, headers, rows, col_widths=None):
         x  = lx
         for ci, (cell, w) in enumerate(zip(row, cw)):
             rect(slide, x, ry, w, rh, bg)
-            fc = C_WHITE if ci==0 else C_GRAY
+            fc = RGBColor(0x1A, 0x1A, 0x2E) if ci==0 else C_GRAY
             txt(slide, cell, x+0.1, ry+0.03, w-0.2, rh-0.06, size=12, color=fc)
             x += w
 
@@ -1340,7 +1340,7 @@ slide = new_slide()
 rect(slide, 0, 0,   13.33, 0.1, C_ACCENT)
 rect(slide, 0, 7.4, 13.33, 0.1, C_ACCENT)
 txt(slide, "まとめ：React 入門ロードマップ", 0.5, 0.25, 12.5, 0.8,
-    size=30, bold=True, align=PP_ALIGN.CENTER)
+    size=30, bold=True, color=RGBColor(0x1A, 0x1A, 0x2E), align=PP_ALIGN.CENTER)
 
 steps = [
     ("① コンポーネント・Props・JSX を理解する",       C_ACCENT),
@@ -1348,7 +1348,7 @@ steps = [
     ("③ useEffect で API 連携・副作用を管理する",      C_YELLOW),
     ("④ Context / Jotai でグローバル状態を管理する",   C_PURPLE),
     ("⑤ パフォーマンス最適化（memo / useCallback / lazy）", C_RED),
-    ("⑥ フォーム・データ取得ライブラリを活用する",     C_GRAY),
+    ("⑥ フォーム・データ取得ライブラリを活用する",     RGBColor(0x44, 0x47, 0x54)),
 ]
 
 for i, (text, color) in enumerate(steps):
@@ -1356,8 +1356,9 @@ for i, (text, color) in enumerate(steps):
     row = i // 2
     x = 0.5 + col * 6.4
     y = 1.25 + row * 1.65
-    rect(slide, x, y, 6.1, 1.45, C_HEADER)
+    rect(slide, x, y, 6.1, 1.45, C_DARKROW)
     rect(slide, x, y, 0.1, 1.45, color)
+    rect(slide, x, y+1.4, 6.1, 0.06, C_DIVIDER)
     txt(slide, text, x + 0.25, y + 0.42, 5.65, 0.65, size=15, bold=True, color=color)
 
 txt(slide, "Happy Coding with React!", 0.5, 6.85, 12.5, 0.5,
