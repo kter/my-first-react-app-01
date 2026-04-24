@@ -12,6 +12,7 @@ describe('HookTimer', () => {
 
   test('setInterval', () => {
     const { debug } = render(<HookTimer init={10} />);
+    // Stateの反映は非同期なのでactを使って文章ツリーに反映されることを保証する
     act(() => {
       vi.advanceTimersByTime(1000);
     });
