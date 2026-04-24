@@ -11,6 +11,7 @@ export default defineConfig({
     alias: {
       image: path.resolve(__dirname, 'src/image'),
     },
+    dedupe: ['react', 'react-dom'],
   },
   test: {
     globals: true,
