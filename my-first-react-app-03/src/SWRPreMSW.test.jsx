@@ -22,7 +22,7 @@ describe('SWRPre (Mock)', () => {
   );
 
   beforeAll(() => server.listen());
-  afterEach(() => serverResetHandlers());
+  afterEach(() => server.resetHandlers());
   afterAll(() => server.close());
 
   test('test using mock', async () => {
